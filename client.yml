@@ -1,0 +1,19 @@
+spring.profiles: aws
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetch-registry: false
+    registry-fetch-interval-seconds: 30
+    disable-delta: true
+    serviceUrl:
+      defaultZone: http://single-eureka-url.com/eureka/
+  instance:
+    enableSelfPreservation: false
+    instance-info-replication-interval-seconds: 30
+    lease-renewal-interval-in-seconds: 15
+    home-page-url-path: /
+    health-check-url-path: /health
+    status-page-url-path: /health
+    hostname: microservice-client-url.com
+    nonSecurePort: 80
