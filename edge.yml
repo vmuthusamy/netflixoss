@@ -1,0 +1,21 @@
+spring:
+  profiles: aws
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetch-registry: true
+    registry-fetch-interval-seconds: 30
+    disable-delta: true
+    serviceUrl:
+      defaultZone: http://single-eureka-url.com/eureka/
+  instance:
+    enableSelfPreservation: false
+    instance-info-replication-interval-seconds: 30
+    lease-renewal-interval-in-seconds: 15
+    home-page-url-path: /
+    health-check-url-path: /status
+    status-page-url-path: /status
+
+ribbon-connect-timeout: 3000
+ribbon-read-timeout: 300000         # 5 minutes (to allow long-running requests)
